@@ -1,0 +1,28 @@
+name: ArcGIS Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x' # Elige la versión de Python que necesitas
+
+    - name: Install dependencies
+      run: |
+        pip install arcgis
+        pip install requests
+
+    - name: Run Python script
+      run: |
+        python update.py # Reemplaza "update.py" con el nombre de tu script
