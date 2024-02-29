@@ -13,16 +13,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install additional dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y krb5-config
+
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x' # Elige la versión de Python que necesitas
+        python-version: '3.x'
 
-    - name: Install dependencies
+    - name: Install arcgis library
       run: |
         pip install arcgis
-        pip install requests
-
-    - name: Run Python script
-      run: |
-        python update.py # Reemplaza "update.py" con el nombre de tu script
