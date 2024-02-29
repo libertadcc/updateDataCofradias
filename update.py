@@ -1,6 +1,6 @@
 from arcgis.gis import GIS
 
-gis = GIS("https://www.arcgis.com", "liber.preventas", "preventas3!¡")
+gis = GIS("https://www.arcgis.com", "liber.preventas", "******")
 
 import requests
 
